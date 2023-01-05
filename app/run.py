@@ -40,16 +40,12 @@ model = joblib.load("../models/classifier.pkl")
 def index():
     
     # extract data needed for visuals
-    # TODO: Below is an example - modify to extract data for your own visuals
     categories = df.iloc[:,4:]
     top_3_category_counts = categories.sum().sort_values(ascending =False)[:3]
     tags = categories.sum(axis = 1).sort_values(ascending = False)
-    
-#     genre_counts = df.groupby('genre').count()['message']
-#     genre_names = list(genre_counts.index)
+   
     
     # create visuals
-    # TODO: Below is an example - modify to create your own visuals
     graphs = [
         {
             'data': [
